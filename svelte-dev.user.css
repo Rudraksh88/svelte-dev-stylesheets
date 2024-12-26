@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Svelte.dev
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
+@version        1.1.0
 @description    Cybernetic docs!
 @author         Rudraksh Tripathi
 ==/UserStyle== */
@@ -13,7 +13,7 @@
 @-moz-document url-prefix("https://svelte.dev/") {
     :root {
         --sk-font-family-ui: "JetBrains Mono" !important;
-        --sk-font-family-heading: 'Rajdhani' !important;
+        --sk-font-family-heading: 'Rajdhani Variable' !important;
         --sk-font-family-mono: "JetBrains Mono" !important;
         --sk-font-family-body: "Inter" !important;
         --sk-font-size-body: 1.6rem !important;
@@ -21,7 +21,7 @@
         --sk-bg-0: hsl(220 8% 8% / 1) !important;
         --sk-bg-1: hsl(220 10% 10% / 1) !important;
         --sk-bg-2: hsl(220 12% 13% / 1) !important;
-        --sk-bg-3: hsl(220 14% 16% / 1) !important;
+        --sk-bg-3:
         --sk-font-size-h1: 5rem !important;
     }
 
@@ -92,7 +92,7 @@
         text-decoration: none !important;
         color: #545b68 !important;
         line-height: 1.3 !important;
-        font-family: Rajdhani !important;
+        font-family: Rajdhani Variable !important;
         font-weight: 500 !important;
     }
 
@@ -127,7 +127,7 @@
     }
 
     .svelte-bkdwgg {
-        color: #f97453 !important;
+        color: #f96743 !important;
     }
 
     [aria-current=page].svelte-1e4cvs7::before {
@@ -140,7 +140,7 @@
     }
 
     ul.svelte-1e4cvs7 ul:where(.svelte-1e4cvs7) * {
-        font-family: "Rajdhani" !important;
+        font-family: "Rajdhani Variable" !important;
         font-size: 1.16em;
 
 /*         font-family: "JetBrains Mono" !important;
@@ -155,7 +155,7 @@
 
     .links.svelte-wyep2e, .links.svelte-wyep2e *, .svelte-wyep2e {
         font-family: JetBrains Mono !important;
-/*         font-family: Rajdhani !important; */
+/*         font-family: Rajdhani Variable !important; */
         font-weight: 800 !important;
         letter-spacing: 0.05em !important;
         text-transform: uppercase;
@@ -193,6 +193,7 @@
         font-weight: 800;
         letter-spacing: .05em !important;
         gap: 5px;
+        margin-top: -5px !important;
     }
 
     .filename {
@@ -210,7 +211,7 @@
     .text.svelte-xe9wq3 .code-block .controls .filename {
         position: relative;
         padding-left: 24px; /* Add some space for the icon */
-/*         margin-top: -1px; */
+        margin-top: -7px !important
     }
 
     .text.svelte-xe9wq3 .code-block .controls .filename::before {
@@ -237,7 +238,7 @@
     }
 
     .contents.svelte-16shhk1 * {
-        font-family: Rajdhani !important;
+        font-family: Rajdhani Variable !important;
         font-weight: 500 !important;
         font-size: 1.7rem !important;
     }
@@ -251,7 +252,7 @@
         margin-left: 0 !important;
     }
 
-    .raised {
+    .raised, .text.svelte-xe9wq3 details:before {
         border-radius: none !important;
         border-style: none !important;
         border-color: none !important;
@@ -260,5 +261,85 @@
 
     div.breadcrumbs.svelte-155hkc1 > :not(span:last-child) {
         color: #545b68;
+    }
+
+    .text.svelte-xe9wq3 .code-block pre {
+        border-radius: .45rem !important;
+        background-color: hsl(220 10% 10% / 1) !important;
+    }
+
+    .text.svelte-xe9wq3 .code-block .controls:has(.filename) {
+        background-color: hsl(220deg 14.05% 15.89%) !important;
+    }
+
+    .text.svelte-xe9wq3 .code-block {
+        padding: 4px !important;
+        border: none !important;
+        background-color: hsl(218.18deg 13.58% 15.88%) !important;
+        border-radius: .7rem !important;
+    }
+
+    .text.svelte-xe9wq3 .code-block .controls .copy-to-clipboard {
+        margin-top: -5px !important;
+        margin-right: 2px !important;
+    }
+
+    .text.svelte-xe9wq3 blockquote:has(details.legacy[open]):before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 10%;
+        z-index: -2 !important;
+        transform: translateY(-50%);
+        width: 100%;  /* Adjust size as needed */
+        height: 16px; /* Adjust size as needed */
+        border-top: 7px solid #f96743 !important;
+        filter: blur(32px) saturate(2) !important;
+    }
+
+    .text.svelte-xe9wq3 blockquote:has(details.legacy) {
+        border-top: 1px solid #f96743;
+        padding-top: 10px !important;
+        background-position: 13px 13px !important;
+        background-size: 2rem 2rem !important;
+/*         overflow-y: hidden !important; */
+    }
+
+    .text.svelte-xe9wq3 blockquote:has(details.legacy[open]):after {
+        content: '';
+        position: absolute;
+        left: -50px;
+        top: -40%;
+        z-index: -1 !important;
+        transform: translateY(-50%);
+        width: 110%;  /* Adjust size as needed */
+        height: 16px; /* Adjust size as needed */
+        border-top: 75px solid #17191c !important;
+        filter: blur(10px)
+    }
+
+    .text.svelte-xe9wq3 .code-block .controls:not(:has(.filename)) {
+        background: none !important;
+        margin: 7px 3px !important;
+    }
+
+    blockquote {
+        margin-top: 30px !important;
+    }
+
+    blockquote > details > summary {
+        font-family: "JetBrains Mono" !important;
+        text-transform: uppercase !important;
+        font-size: 1.3em !important;
+        font-weight: 800 !important;
+        letter-spacing: .05em;
+    }
+
+    .legacy :is(.text.svelte-xe9wq3 details>summary):after {
+        display: none !important;
+    }
+
+    .text.svelte-xe9wq3 details[open]>summary {
+        margin-bottom: none !important;
     }
 }
